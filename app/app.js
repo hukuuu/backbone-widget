@@ -14,7 +14,7 @@ define([
         // creation.
         var app = {
             // The root path to run the application.
-            root:"/backbone-widget/"
+            root:"/backbone-widget-github/"
         };
 
         // Localize or create a new JavaScript Template object.

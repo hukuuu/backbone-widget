@@ -7,14 +7,19 @@ define([
 // Map dependencies from above array.
     function (app) {
 
+        var optionns = {
 
+            country : 'BG',
+            cities : [
+                'Stara Zagora',
+                'Sofia'
+            ],
+            api_key : '32c7ad7bd43b9bab'
+        }
 
         // Create a new module.
         var Widget = app.module();
 
-
-        var API_KEY = '32c7ad7bd43b9bab';
-        Widget.BASE_URL = 'http://api.wunderground.com/api/' + API_KEY + ' /conditions/q/';
 
         // only for testing
         Widget.BASE_URL = 'sofia.json';
