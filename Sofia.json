@@ -1,0 +1,92 @@
+
+{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Sofia, Bulgaria",
+		"city":"Sofia",
+		"state":"",
+		"state_name":"Bulgaria",
+		"country":"BU",
+		"country_iso3166":"BG",
+		"zip":"00000",
+		"latitude":"42.65000153",
+		"longitude":"23.37999916",
+		"elevation":"531.00000000"
+		},
+		"observation_location": {
+		"full":"Sofia, ",
+		"city":"Sofia",
+		"state":"",
+		"country":"BU",
+		"country_iso3166":"BG",
+		"latitude":"42.65000153",
+		"longitude":"23.37999916",
+		"elevation":"1742 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"LBSF",
+		"observation_time":"Last Updated on October 29, 3:30 PM EET",
+		"observation_time_rfc822":"Mon, 29 Oct 2012 15:30:00 +0200",
+		"observation_epoch":"1351517400",
+		"local_time_rfc822":"Mon, 29 Oct 2012 15:46:47 +0200",
+		"local_epoch":"1351518407",
+		"local_tz_short":"EET",
+		"local_tz_long":"Europe/Sofia",
+		"local_tz_offset":"+0200",
+		"weather":"Rain",
+		"temperature_string":"55 F (13 C)",
+		"temp_f":55,
+		"temp_c":13,
+		"relative_humidity":"100%",
+		"wind_string":"From the NW at 7 MPH",
+		"wind_dir":"NW",
+		"wind_degrees":310,
+		"wind_mph":7,
+		"wind_gust_mph":0,
+		"wind_kph":11,
+		"wind_gust_kph":0,
+		"pressure_mb":"1004",
+		"pressure_in":"29.65",
+		"pressure_trend":"0",
+		"dewpoint_string":"55 F (13 C)",
+		"dewpoint_f":55,
+		"dewpoint_c":13,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"55 F (13 C)",
+		"feelslike_f":"55",
+		"feelslike_c":"13",
+		"visibility_mi":"3.1",
+		"visibility_km":"5.0",
+		"solarradiation":"",
+		"UV":"0",
+		"precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"-9999.00",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"rain",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/rain.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/15614.html",
+		"history_url":"http://www.wunderground.com/history/airport/LBSF/2012/10/29/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=42.65000153,23.37999916"
+	}
+}
