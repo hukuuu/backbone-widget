@@ -1,105 +1,110 @@
 define([
-  // Libraries.
-  "jquery",
-  "lodash",
-  "backbone",
-  "handlebars",
+    // Libraries.
+    "jquery",
+    "lodash",
+    "backbone",
+    "handlebars",
 
-  // Plugins.
-  "plugins/backbone.layoutmanager"
+    // Plugins.
+    "plugins/backbone.layoutmanager"
 ],
 
-function($, _, Backbone, Handlebars) {
+    function ($, _, Backbone, Handlebars) {
+        // Provide a global location to place configuration settings and module
+        // creation.
+        var app = {
+            // The root path to run the application.
+            root:"/backbone-widget/"
+        };
 
-  // Provide a global location to place configuration settings and module
-  // creation.
-  var app = {
-    // The root path to run the application.
-    root: "/backbone-widget/"
-  };
+        // Localize or create a new JavaScript Template object.
+        var JST = window.JST = window.JST || {};
 
-  // Localize or create a new JavaScript Template object.
-  var JST = window.JST = window.JST || {};
+        // Configure LayoutManager with Backbone Boilerplate defaults.
+        Backbone.LayoutManager.configure({
+            // Allow LayoutManager to augment Backbone.View.prototype.
+            manage:true,
 
-  // Configure LayoutManager with Backbone Boilerplate defaults.
-  Backbone.LayoutManager.configure({
-    // Allow LayoutManager to augment Backbone.View.prototype.
-    manage: true,
+            prefix:"app/templates/",
 
-    paths: {
-      layout: "app/templates/layouts/",
-      template: "app/templates/"
-    },
+            fetch:function (path) {
+                var done;
 
-    fetch: function(path) {
-      // Initialize done for use in async-mode
-      var done;
+                // Add the html extension.
+                path = path + ".html";
+                // If the template has not been loaded yet, then load.
+                if (!JST[path]) {
+                    done = this.async();
+                    return $.ajax({ url:app.root + path }).then(function (contents) {
+                        // debug helper
+                        // usage: {{debug}} or {{debug someValue}}
+                        // from: @commondream (http://thinkvitamin.com/code/handlebars-js-part-3-tips-and-tricks/)
+                        Handlebars.registerHelper("debug", function (optionalValue) {
+                            console.log("Current Context");
+                            console.log("====================");
+                            console.log(this);
 
-      // Concatenate the file extension.
-      path = path + ".html";
+                            if (optionalValue) {
+                                console.log("Value");
+                                console.log("====================");
+                                console.log(optionalValue);
+                            }
+                        });
+                        JST[path] = Handlebars.compile(contents);
+                        JST[path].__compiled__ = true;
 
-      // If cached, use the compiled template.
-      if (JST[path]) {
-        return JST[path];
-      } else {
-        // Put fetch into `async-mode`.
-        done = this.async();
+                        done(JST[path]);
+                    });
+                }
 
-        // Seek out the template asynchronously.
-        return $.ajax({ url: app.root + path }).then(function(contents) {
-          JST[path] = Handlebars.compile(contents);
-          JST[path].__compiled__ = true;
+                // If the template hasn't been compiled yet, then compile.
+                if (!JST[path].__compiled__) {
+                    JST[path] = Handlebars.template(JST[path]);
+                    JST[path].__compiled__ = true;
+                }
 
-          done(JST[path]);
+                return JST[path];
+            }
         });
-      }
-       // If the template hasn't been compiled yet, then compile.
-      if (!JST[path].__compiled__) {
-        JST[path] = Handlebars.template(JST[path]);
-        JST[path].__compiled__ = true;
-      }
-      return JST[path];
-    }
-  });
 
-  // Mix Backbone.Events, modules, and layout management into the app object.
-  return _.extend(app, {
-    // Create a custom object with a nested Views object.
-    module: function(additionalProps) {
-      return _.extend({ Views: {} }, additionalProps);
-    },
+        // Mix Backbone.Events, modules, and layout management into the app object.
+        return _.extend(app, {
+            // Create a custom object with a nested Views object.
+            module:function (additionalProps) {
+                return _.extend({ Views:{} }, additionalProps);
+            },
 
-    // Helper for using layouts.
-    useLayout: function(name, options) {
-      // If already using this Layout, then don't re-inject into the DOM.
-      if (this.layout && this.layout.options.template === name) {
-        return this.layout;
-      }
+            // Helper for using layouts.
+            useLayout: function(name) {
+                // If already using this Layout, then don't re-inject into the DOM.
+                if (this.layout && this.layout.options.template === name) {
+                    return this.layout;
+                }
 
-      // If a layout already exists, remove it from the DOM.
-      if (this.layout) {
-        this.layout.remove();
-      }
+                // Ensure previous layouts are completely removed.
+                if (this.layout) {
+                    this.layout.remove();
+                }
 
-      // Create a new Layout with options.
-      var layout = new Backbone.Layout(_.extend({
-        template: name,
-        className: "layout " + name,
-        id: "layout"
-      }, options));
+                // Create a new Layout.
+                var layout = new Backbone.Layout({
+                    template: name,
+                    className: "layout " + name,
+                    id: "layout"
+                });
 
-      // Insert into the DOM.
-      $("#main").empty().append(layout.el);
+                // Insert into the DOM.
+                $("#main").empty().append(layout.el);
 
-      // Render the layout.
-      layout.render();
+                // Render the layout.
+                layout.render();
 
-      // Cache the refererence.
-      this.layout = layout;
+                // Cache the reference on the Router.
+                this.layout = layout;
 
-      // Return the reference, for chainability.
-      return layout;
-    }
-  }, Backbone.Events);
+                // Return the reference, for later usage.
+                return layout;
+            }
+        }, Backbone.Events);
 
-});
+    });

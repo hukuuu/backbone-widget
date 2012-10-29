@@ -1,24 +1,22 @@
 define([
-  // Application.
-  "app"
+    // Application.
+    "app",
+    "modules/widget"
 ],
 
-function(app) {
+    function (app, Widget) {
 
-  // Defining the application router, you can attach sub routers here.
-  var Router = Backbone.Router.extend({
-    routes: {
-      "": "index"
-    },
+        // Defining the application router, you can attach sub routers here.
+        var Router = Backbone.Router.extend({
+            routes:{
+                "":"index"
+            },
 
-    index: function() {
-      console.log('widget started');
-      app.useLayout('main',{
-        template: 'main-layout'
-      });
-    }
-  });
+            index:function () {
+                new Widget.Views.Layout();
+            }
+        });
 
-  return Router;
+        return Router;
 
-});
+    });
