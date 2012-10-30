@@ -13,7 +13,10 @@ define([
             },
 
             index:function () {
-                new Widget.Views.Layout();
+                app.useLayout('main-layout').setViews({
+                    '.add-city' : new Widget.Views.AddCity(),
+                    '.cities' : new Widget.Views.Layout()
+                })
             }
         });
 

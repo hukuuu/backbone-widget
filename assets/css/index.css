@@ -13,14 +13,14 @@
 
 /* Put development-only CSS below this line. */
 
-#main-view {
+.main-view {
     width: 400px;
     padding: 10px;
     text-align: left;
     background-color: #BADBAC;
     font-size: larger;
 }
-#main-view img {
+.main-view img {
     float: right;
     margin: 10px;
 }

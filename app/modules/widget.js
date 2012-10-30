@@ -7,14 +7,17 @@ define([
 // Map dependencies from above array.
     function (app) {
 
-        var optionns = {
+        var options = {
 
-            country : 'BG',
-            cities : [
+            country:'BG',
+            cities:[
                 'Stara Zagora',
                 'Sofia'
             ],
-            api_key : '32c7ad7bd43b9bab'
+            jsons:[
+                'StaraZagora.json'
+            ],
+            api_key:'32c7ad7bd43b9bab'
         }
 
         // Create a new module.
@@ -26,35 +29,53 @@ define([
 
         // Default Model.
         Widget.Model = Backbone.Model.extend({
-            url:'sofia.json'
         });
 
         // Default Collection.
         Widget.Collection = Backbone.Collection.extend({
-            model:Widget.Model,
-            url:'sofia.json'
+            model:Widget.Model
+        });
+
+        Widget.Views.AddCity = Backbone.View.extend({
+            template: 'add-city',
+            events: {
+                'click #add': 'addButtonClicked'
+            },
+            addButtonClicked : function(e){
+                var json = this.$el.find('#city').val();
+                Backbone.Events.trigger('nice',json);
+            }
         });
 
         Widget.Views.Main = Backbone.View.extend({
             template:'main-view',
-            data:function(){
+            initialize:function () {
+                console.log(this.options.url);
+            },
+            data:function () {
                 return this.model;
             }
         });
 
         // Default View.
-        Widget.Views.Layout = Backbone.Layout.extend({
-            template:"widget",
+        Widget.Views.Layout = Backbone.View.extend({
+            collection : new Widget.Collection(),
             initialize:function () {
-                var forecast = new Widget.Collection().fetch(),
-                    me = this;
-                console.log(me);
-                forecast.done(function (data) {
-                    console.log(data.current_observation);
-                    app.useLayout(me.template).setViews({
-                        '.widget-container':new Widget.Views.Main({model:data.current_observation})
+                var me = this;
+//                options.jsons.forEach(function (url) {
+//                    $.get(url, function (data) {
+//                        console.log(data);
+//                        me.insertView(new Widget.Views.Main({model:data.current_observation})).render();
+//                    });
+//                });
+
+                Backbone.Events.on('nice',function(json){
+                    this.collection.add({json: json});
+                    $.get(json, function (data) {
+                        console.log(data);
+                        me.insertView(new Widget.Views.Main({model:data.current_observation})).render();
                     });
-                });
+                },this);
             }
         });
 
