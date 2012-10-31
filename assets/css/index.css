@@ -1,6 +1,6 @@
 /* H5BP styles. */
-@import "../vendor/h5bp/css/normalize.css";
-@import "../vendor/h5bp/css/main.css";
+/*@import "../vendor/h5bp/css/normalize.css";*/
+/*@import "../vendor/h5bp/css/main.css";*/
 
 /* Add Stylus stylesheets here, alll files ending in .styl will be compiled!
  * For example: @import "main.styl";
@@ -9,25 +9,19 @@
  *
  */ 
 
-
+@import "../bootstrap/css/bootstrap.css";
 
 /* Put development-only CSS below this line. */
 
-.main-view {
-    width: 400px;
-    padding: 10px;
-    text-align: left;
-    background-color: #BADBAC;
-    font-size: larger;
+.table{
+    margin-bottom: 0px;
 }
-.main-view img {
-    float: right;
-    margin: 10px;
+
+.widget {
+    box-shadow: 0 0 25px 1px #a9a9a9;
+    margin: 20px 20px 20px 20px;
 }
-.widget-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+
+.row-fluid [class*="span"]:first-child {
+    margin-left: 20px;
 }

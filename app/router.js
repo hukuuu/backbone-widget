@@ -13,9 +13,17 @@ define([
             },
 
             index:function () {
+                var widgetLayout = new Widget.Views.Layout(),
+                    widgetAddCity =  new Widget.Views.AddCity();
+                widgetAddCity.on('city:added',function(url){
+                    $.get(url, function (data) {
+                        console.log(data);
+                        widgetLayout.insertView(new Widget.Views.Main({model:data.data})).render();
+                    });
+                },this);
                 app.useLayout('main-layout').setViews({
-                    '.add-city' : new Widget.Views.AddCity(),
-                    '.cities' : new Widget.Views.Layout()
+                    '.add-city-container' : widgetAddCity,
+                    '.cities-container' : widgetLayout
                 })
             }
         });

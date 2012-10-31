@@ -1,0 +1,33 @@
+<table class="table table-bordered table-hover table-condensed" >
+    <tbody>
+    <tr>
+        <th  colspan="4" style="text-align: center">
+            {{request.0.query}}
+            <a class="close pull-right" href="#">&times;</a>
+        </th>
+    </tr>
+    <tr>
+        <th>date</th>
+        <th>min</th>
+        <th>max</th>
+        <th></th>
+    </tr>
+    {{#each weather}}
+    <tr>
+        <td>
+            {{this.date}}
+        </td>
+        <td>
+            {{this.tempMinC}}
+        </td>
+        <td>
+            {{this.tempMaxC}}
+        </td>
+        <td style="text-align: center">
+            <img src="{{this.weatherIconUrl.0.value}}" title="{{this.weatherDesc.0.value}}" width="40px"/>
+        </td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+
