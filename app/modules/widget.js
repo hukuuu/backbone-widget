@@ -1,7 +1,8 @@
 // Widget module
 define([
     // Application.
-    "app"
+    "app",
+    ""
 ],
 
 // Map dependencies from above array.
@@ -36,7 +37,6 @@ define([
                 var city = this.$el.find('#city').val(),
                     country = this.$el.find('#country').val(),
                     url = Widget.Settings.BASE_URL.replace('{city}',city).replace('{country}',country);
-                console.log(url);
                 this.trigger('city:added',url);
             }
         });
@@ -46,15 +46,17 @@ define([
             tagName: 'div',
             className: 'widget span3',
             initialize:function () {
+                console.log(this.model);
+                console.log("created with urlId: ", this.urlId);
             },
             events : {
                 'click a[class*="close"]': 'removeView'
             },
             data:function () {
-                console.log(this.model);
                 return this.model;
             },
             removeView: function(event){
+                Backbone.Events.trigger('widget:removed',this.urlId);
                 this.remove();
             }
         });
@@ -62,11 +64,7 @@ define([
         // Default View.
         Widget.Views.Layout = Backbone.View.extend({
             tagName:'div',
-            className:'cities row-fluid',
-            collection : new Widget.Collection(),
-            initialize:function () {
-                var me = this;
-            }
+            className:'cities row-fluid'
         });
 
         // Return the module for AMD compliance.

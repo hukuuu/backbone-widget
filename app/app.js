@@ -4,6 +4,8 @@ define([
     "lodash",
     "backbone",
     "handlebars",
+    "localStorage",
+
 
     // Plugins.
     "plugins/backbone.layoutmanager"

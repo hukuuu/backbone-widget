@@ -15,7 +15,8 @@ require.config({
         lodash:"../assets/js/libs/lodash",
         backbone:"../assets/js/libs/backbone",
         handlebars:"../assets/js/libs/handlebars",
-        bootstrap:"../assets/bootstrap/js/bootstrap"
+        bootstrap:"../assets/bootstrap/js/bootstrap",
+        localStorage: "../assets/js/libs/localStorage"
     },
 
     shim:{
@@ -31,6 +32,11 @@ require.config({
 
         bootstrap:{
             exports:"Bootstrap"
+        },
+
+        localStorage: {
+            deps: ["backbone"],
+            exports:"LocalStorage"
         },
 
         // Backbone.LayoutManager depends on Backbone.
