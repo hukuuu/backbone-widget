@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e68cdcd4-3554-4f64-9a9b-8572b07cacb2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/widget.js" afterPath="$PROJECT_DIR$/app/modules/widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/router.js" afterPath="$PROJECT_DIR$/app/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/main-layout.html" afterPath="$PROJECT_DIR$/app/templates/main-layout.html" />
     </list>
     <ignored path="backbone-widget-github.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,15 +25,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="widget.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/modules/widget.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,17 +52,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main-layout.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/main-layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="24" selection-start="51" selection-end="67" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/modules/error.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="40" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="router.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="47" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1351775133408" expanded="true" signature="124:2099" placeholder="{...}" />
-                <marker date="1351775133408" expanded="true" signature="248:2066" placeholder="{...}" />
-                <marker date="1351775133408" expanded="true" signature="344:2056" placeholder="{...}" />
-                <marker date="1351775133408" expanded="true" signature="1364:2035" placeholder="{...}" />
-                <marker date="1351775133408" expanded="true" signature="1413:2015" placeholder="{...}" />
-              </folding>
+            <state line="48" column="61" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/error.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="117" selection-end="117" vertical-scroll-proportion="0.061818182">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="0.21636364">
+            <state line="7" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="-4.576923">
               <folding />
             </state>
           </provider>
@@ -117,7 +132,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Sofia.json" />
-        <option value="$PROJECT_DIR$/app/templates/main-layout.html" />
         <option value="$PROJECT_DIR$/app/templates/main-view.html" />
         <option value="$PROJECT_DIR$/assets/css/index.css" />
         <option value="$PROJECT_DIR$/app/templates/widget.html" />
@@ -127,9 +141,12 @@
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/assets/js/libs/backbone.js" />
         <option value="$PROJECT_DIR$/app/modules/addCity.js" />
-        <option value="$PROJECT_DIR$/app/router.js" />
-        <option value="$PROJECT_DIR$/app/modules/widget.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/modules/widget.js" />
+        <option value="$PROJECT_DIR$/app/templates/main-layout.html" />
+        <option value="$PROJECT_DIR$/app/router.js" />
+        <option value="$PROJECT_DIR$/app/modules/error.js" />
+        <option value="$PROJECT_DIR$/app/templates/error.html" />
       </list>
     </option>
   </component>
@@ -180,6 +197,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone-widget-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,8 +312,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -255,7 +322,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19557196" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -321,30 +388,10 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="45" selection-start="313" selection-end="318" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="18" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1351775133408" expanded="true" signature="124:2099" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="248:2066" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="344:2056" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="1364:2035" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="1413:2015" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -365,11 +412,6 @@
         <state line="23" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/main-layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="36" selection-start="75" selection-end="75" vertical-scroll-proportion="0.03195489" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/main.js">
@@ -407,26 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="47" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1351775133408" expanded="true" signature="124:2099" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="248:2066" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="344:2056" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="1364:2035" placeholder="{...}" />
-            <marker date="1351775133408" expanded="true" signature="1413:2015" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/libs/lodash.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="0" selection-start="3482" selection-end="3482" vertical-scroll-proportion="0.0">
@@ -438,7 +460,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="0.21636364">
+        <state line="7" column="29" selection-start="230" selection-end="230" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/main-layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="51" selection-end="67" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="30" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="61" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/error.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="40" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="117" selection-end="117" vertical-scroll-proportion="0.061818182">
           <folding />
         </state>
       </provider>

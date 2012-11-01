@@ -14,7 +14,9 @@ define([
         // Default Model.
         Widget.Model = Backbone.Model.extend({
             validate: function(attrs) {
-                console.log(attrs);
+                if( attrs.data && attrs.data.error){
+                    return attrs.data.error[0].msg;
+                }
             }
         });
 
