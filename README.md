@@ -1,1 +1,1 @@
-backbone weather app
+backbone weather application
