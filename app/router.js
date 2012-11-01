@@ -1,15 +1,11 @@
 define([
     // Application.
     "app",
-    "modules/widget"
+    "modules/widget",
+    "modules/addCity"
 ],
 
-    function (app, Widget) {
-
-        var LocalStorageCollection = Backbone.Collection.extend({
-            localStorage: new Backbone.LocalStorage("Urls") // Unique name within your app.
-
-        });
+    function (app, Widget, Addcity) {
 
         // Defining the application router, you can attach sub routers here.
         var Router = Backbone.Router.extend({
@@ -19,9 +15,9 @@ define([
 
             index:function () {
                 var widgetLayout = new Widget.Views.Layout(),
-                    widgetAddCity =  new Widget.Views.AddCity();
+                    addCity =  new Addcity.Views.AddCity();
 
-                var Urls = new LocalStorageCollection();
+                var Urls = new Addcity.Collection();
                 //get all urls from the localStorage and load the views
                 Urls.fetch().done(function(){
                     Urls.each(function(urlModel){
@@ -33,25 +29,27 @@ define([
 
                 Backbone.Events.on('widget:removed',function(urlId){
                    var model = Urls.get(urlId);
-                    console.log(urlId);
-                   Urls.remove(model);
+                   model.destroy();
                 });
 
                 app.useLayout('main-layout').setViews({
-                    '.add-city-container' : widgetAddCity,
+                    '.add-city-container' : addCity,
                     '.cities-container' : widgetLayout
                 })
 
 
-                widgetAddCity.on('city:added',function(url){
+                addCity.on('city:added',function(url){
                     $.get(url, function (data) {
-                        var urlModel = new Backbone.Model({
-                            url:url
-                        })
-                        Urls.push(urlModel);
-                        urlModel.save();
-                        console.log('giving: ', urlModel.id);
-                        widgetLayout.insertView(new Widget.Views.Main({model:data.data, urlId:urlModel.id})).render();
+                        var widgetModel = new Widget.Model(data.data);
+                        console.log(widgetModel);
+                        widgetModel.validate();
+//                        var urlModel = new Addcity.Model({
+//                            url:url
+//                        })
+//                        urlModel.collection = Urls;
+//                        urlModel.save();
+//                        console.log('giving: ', urlModel.id);
+//                        widgetLayout.insertView(new Widget.Views.Main({model:data.data, urlId:urlModel.id})).render();
                     });
                 },this);
             }
